@@ -1,0 +1,100 @@
+Tensorflow in action - image classification
+
+Keywords: Deep Learning(DL), Convolutional Neural Networks(CNN)
+
+TensorFlow is an Open Source Software Library for Machine Intelligence.[1]
+In here, we hope to use tensorflow to classify tens of thousands images, in order to free heavy manual works on it.
+
+
+Planning:
+1. Collecting labeled image data
+2. Image preprocessing(ETL): Extract, Transform and Load
+3. Building dataset: train, validation and test
+4. Modeling: LeNet, AlexNet, GoogLeNet, VGG, ResNet...
+5. Implementing: coding, running, testing
+6. Fine-Tuning
+
+
+Collecting labeled image data
+	manual collect
+
+
+Image preprocessing
+	format converting(RGB or gray)
+	resize
+	crop
+	flip
+	rotate
+	adjust brightness
+	...
+
+
+Building dataset
+The training set is used to fit the models; the validation set is used to estimate prediction error for model selection; the test set is used for assessment of the generalization error of the final chosen model. Ideally, the test set should be kept in a “vault,” and be brought out only at the end of the data analysis.[5]
+
+train, validation and test datasets[14]
+
+number of samples > 3000, RULE of 30(3000 * 1%), improve 1% accuracy, avoid noise[12]
+
+
+Modeling
+	Reference state-of-art models: LeNet, AlexNet, GoogLeNet, VGG, ResNet...[2]
+	or you can build another one to fit you work.
+
+
+Implementing
+	Dependency required:
+		python 2.7+
+		tensorflow[1]
+		numpy[7]
+		Pillow[8]
+		matplotlib[9]
+
+	Installing
+		# tensorflow pip-installation[6]
+		sudo pip install --upgrade pip setuptools
+		sudo pip install numpy --upgrade
+		sudo pip install matplotlib --upgrade
+
+		For OS X El Capitan users, when install tensorflow, you should first disable System Integrity Protection (rootless) as follows:
+			Reboot your mac and hold Cmd+R at the startup chime.
+			Chose Terminal>Utilities from the top menu bar.
+			Type: csrutil disable; reboot
+
+		For China users, when install tensorflow, you maybe add a mirror like that.
+			sudo pip install --upgrade $TF_BINARY_URL -i https://pypi.mirrors.ustc.edu.cn/simple
+
+
+Fine-Tuning
+	Data Augmentation[4]
+	Keep calm and lower your learning rate[12]
+	Using better optimizer[10]
+
+
+Ending? No, it's just beginning. There are still much work to do...
+
+References
+	1. https://www.tensorflow.org/
+	2. https://zhuanlan.zhihu.com/p/22094600?refer=52mlnet
+	3. http://blog.csdn.net/sunbaigui/article/details/39938097
+	4. http://imbinwang.github.io/blog/data-augmentation-in-deep-learning
+	5. http://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set
+	6. https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html#pip-installation
+	7. http://www.numpy.org/
+	8. http://pillow.readthedocs.org
+	9. http://matplotlib.org/
+	10. http://sebastianruder.com/optimizing-gradient-descent/
+
+Open classes
+	Machine Learning
+	11. http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning
+
+	Google Deep Learning and notes
+	12. https://classroom.udacity.com/courses/ud730/lessons/6370362152/concepts/63798118170923
+	13. https://github.com/ahangchen/GDLnotes
+
+	14. https://zh.coursera.org/learn/machine-learning/lecture/QGKbr/model-selection-and-train-validation-test-sets
+
+	CS231n Convolutional Neural Networks for Visual Recognition
+	15. http://cs231n.stanford.edu/
+	16. https://github.com/cs231n/cs231n.github.io
