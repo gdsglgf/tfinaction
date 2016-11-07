@@ -128,6 +128,9 @@ def test_dataset():
 def test_datasetqueue():
 	show_header('test_datasetqueue')
 	large_files = load_image_file(large_test_data_dir, join_path=True)
+	if len(large_files) == 0:
+		print('Not found image file')
+		return
 	large_dataset = Dataset(large_files)
 	queue = DatasetQueue(large_dataset, batch_size=128)
 	queue.start()

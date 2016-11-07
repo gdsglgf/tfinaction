@@ -14,6 +14,8 @@ def shuffle(data):
 	return shuffled
 
 def load_image_file(data_dir, join_path=False, image_suffix='.jpg', label=None):
+	if not os.path.exists(data_dir):
+		return []
 	if label:
 		files = [f for f in os.listdir(data_dir) if f.endswith(image_suffix) and f.startswith(label)]
 	else:
